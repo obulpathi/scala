@@ -1,9 +1,11 @@
-// In Scala, functions are named, reusable expressions. They may be parameterized and
+def hi = "hi"
+println(hi)
+
+// in scala, functions are named, reusable expressions.
+// they may be parameterized and
 // they may return a value, but neither of these features are required.
 
 // at most basic, a function is a named wrapper for expression
-def hi = "hi"
-println(hi)
 
 // specifying return values
 def hello: String = "hello"
@@ -39,3 +41,29 @@ def greet(name: String, prefix: String = "") = println("Hi " + prefix + " " + na
 
 greet("Obul")
 greet("Obul", "Mr.")
+
+// One of the core values of functional programming is that functions should be first-
+// class. The term indicates that they are not only declared and invoked but can be used
+// in every segment of the language as just another data type. A first-class function may,
+// as with other data types, be created in literal form without ever having been assigned
+// an identifier; be stored in a container such as a value, variable, or data structure; and be
+// used as a parameter to another function or used as the return value from another func‐
+// tion.
+
+// Higher other functions: Functions that accept other functions as parameters
+// and/or use functions as return values are known as higher-order functions.
+// Example: map() and reduce()
+
+// Function type: ([<type>, ...]) => <type>
+def double(x: Int): Int = {
+    x * 2
+}
+val myDouble: Int => Int = double
+println(myDouble(5))
+
+
+// lambda functions
+val doubler = (x: Int) => x * 2
+println(doubler(10))
+
+// using value binding, function currying can be done
